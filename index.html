@@ -27,7 +27,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 40px;
+            padding: 16px 40px;
             background-color: rgba(11, 15, 25, 0.8);
             border-bottom: 1px solid rgba(255, 255, 255, 0.05);
         }
@@ -44,69 +44,58 @@
             color: #9ca3af;
         }
 
-        /* Hero Section */
+        /* Hero Section Reducido */
         .hero {
             text-align: center;
-            padding: 60px 20px 80px 20px;
+            padding: 35px 20px 40px 20px;
             background: linear-gradient(180deg, #0b0f19 0%, #111827 100%);
             border-bottom: 1px solid rgba(59, 130, 246, 0.2);
         }
 
         .badge {
             display: inline-block;
-            padding: 6px 16px;
+            padding: 5px 14px;
             background: rgba(30, 58, 138, 0.4);
             border: 1px solid rgba(96, 165, 250, 0.3);
             border-radius: 20px;
-            font-size: 13px;
+            font-size: 12px;
             color: #93c5fd;
-            margin-bottom: 24px;
+            margin-bottom: 14px;
             font-weight: 500;
         }
 
         .hero h1 {
-            font-size: 42px;
+            font-size: 34px;
             font-weight: 800;
             color: #ffffff;
-            margin-bottom: 16px;
+            margin-bottom: 10px;
             letter-spacing: -0.5px;
         }
 
         .hero p {
-            font-size: 16px;
-            color: #9ca3af;
-            max-width: 650px;
-            margin: 0 auto 32px auto;
-            line-height: 1.6;
-        }
-
-        .btn-primary {
-            display: inline-block;
-            background-color: #2563eb;
-            color: #ffffff;
-            padding: 12px 28px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 600;
             font-size: 15px;
-            transition: background-color 0.2s, transform 0.2s;
-            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+            color: #9ca3af;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.5;
         }
 
-        .btn-primary:hover {
-            background-color: #1d4ed8;
-            transform: translateY(-2px);
-        }
-
-        /* Contenedor de Apartados (Cards Grid) */
+        /* Contenedor de Apartados (Diseño estricto de 2 columnas) */
         .container {
-            max-width: 1200px;
-            margin: 60px auto;
+            max-width: 900px;
+            margin: 40px auto;
             padding: 0 20px;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(2, 1fr);
             gap: 24px;
             flex-grow: 1;
+        }
+
+        /* Ajuste responsivo para pantallas pequeñas */
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
         }
 
         .card {
@@ -123,15 +112,15 @@
         .card:hover {
             transform: translateY(-5px);
             border-color: rgba(96, 165, 250, 0.4);
-            box-shadow: 0 10px 25px -5px rgba(0, 0.0, 0.0, 0.5);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5);
         }
 
         .card-img-container {
             width: 100%;
-            height: 150px;
+            height: 140px;
             background-color: #1f2937;
             border-radius: 8px;
-            margin-bottom: 20px;
+            margin-bottom: 16px;
             overflow: hidden;
             display: flex;
             align-items: center;
@@ -150,20 +139,20 @@
         }
 
         .card h3 {
-            font-size: 18px;
+            font-size: 17px;
             font-weight: 600;
             color: #ffffff;
-            margin-bottom: 12px;
+            margin-bottom: 10px;
             display: flex;
             align-items: center;
             gap: 8px;
         }
 
         .card p {
-            font-size: 14px;
+            font-size: 13px;
             color: #9ca3af;
             line-height: 1.5;
-            margin-bottom: 24px;
+            margin-bottom: 20px;
             flex-grow: 1;
         }
 
@@ -191,7 +180,7 @@
         /* Footer */
         footer {
             text-align: center;
-            padding: 30px;
+            padding: 25px;
             font-size: 13px;
             color: #6b7280;
             border-top: 1px solid rgba(255, 255, 255, 0.05);
@@ -207,22 +196,20 @@
         <div class="header-right">Colegio Capouilliez</div>
     </header>
 
-    <!-- Sección Hero Principal -->
+    <!-- Sección Hero Reducida -->
     <section class="hero">
         <div class="badge">🚀 Proyecto de Automatización y TICs</div>
         <h1>Centro de Mando SafeZone IRTRA</h1>
         <p>Sistema Electrónico Autónomo aplicado al IRTRA Petapa. Solución integral de ingeniería desarrollada para optimizar procesos operativos mediante tecnología de vanguardia.</p>
-        <a href="#apartados" class="btn-primary">Explorar Componentes</a>
     </section>
 
-    <!-- Contenedor con los 4 Apartados -->
-    <div class="container" id="apartados">
+    <!-- Contenedor con los 4 Apartados (Distribuidos 2 y 2) -->
+    <div class="container">
         
         <!-- Apartado 1 -->
         <div class="card">
             <div>
                 <div class="card-img-container">
-                    <!-- Reemplaza el src con tu imagen real -->
                     <span class="card-img-placeholder">Imagen de Simulación</span>
                 </div>
                 <h3>⚙️ 1. Simulación de Tinkercad</h3>
@@ -235,13 +222,11 @@
         <div class="card">
             <div>
                 <div class="card-img-container">
-                    <!-- Reemplaza el src con tu imagen real -->
                     <span class="card-img-placeholder">Imagen de Investigación</span>
                 </div>
                 <h3>📁 2. Investigación Formal</h3>
                 <p>Documento técnico detallado que incluye la fundamentación teórica, estructuración bajo normas y el marco de desarrollo del proyecto.</p>
             </div>
-            <!-- Nota: Los enlaces locales file:/// no abren directamente desde navegadores modernos por seguridad, se sugiere cambiar por ruta relativa si se sube a internet -->
             <a href="file:///D:/Downloads/Proyecto%20Final%20Robotica%20IRTRA%20-%20Documento%20Formal%20Limpio%20(1).pdf" target="_blank" class="card-btn">Leer Documento PDF</a>
         </div>
 
@@ -249,7 +234,6 @@
         <div class="card">
             <div>
                 <div class="card-img-container">
-                    <!-- Reemplaza el src con tu imagen real -->
                     <span class="card-img-placeholder">Imagen de Infografía</span>
                 </div>
                 <h3>📊 3. Infografía del Proyecto</h3>
@@ -262,13 +246,11 @@
         <div class="card">
             <div>
                 <div class="card-img-container">
-                    <!-- Reemplaza el src con tu imagen real -->
                     <span class="card-img-placeholder">Imagen de Podcast</span>
                 </div>
                 <h3>🎙️ 4. Podcast Explicativo</h3>
                 <p>Exposición en formato de audio/video donde se detallan los objetivos, retos superados y demostración de los resultados obtenidos.</p>
             </div>
-            <!-- Cambia el link del href por tu video de YouTube real -->
             <a href="https://www.youtube.com" target="_blank" class="card-btn">Escuchar / Ver Podcast</a>
         </div>
 
