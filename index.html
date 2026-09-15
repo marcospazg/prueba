@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Centro de Mando SafeZone IRTRA</title>
+    <!-- Google Fonts para un estilo moderno -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background-color: #0b0f19;
+            color: #f3f4f6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Header estilo barra superior */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+            background-color: rgba(11, 15, 25, 0.8);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .header-left {
+            font-size: 14px;
+            font-weight: 600;
+            color: #60a5fa;
+            letter-spacing: 0.5px;
+        }
+
+        .header-right {
+            font-size: 14px;
+            color: #9ca3af;
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 60px 20px 80px 20px;
+            background: linear-gradient(180deg, #0b0f19 0%, #111827 100%);
+            border-bottom: 1px solid rgba(59, 130, 246, 0.2);
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 6px 16px;
+            background: rgba(30, 58, 138, 0.4);
+            border: 1px solid rgba(96, 165, 250, 0.3);
+            border-radius: 20px;
+            font-size: 13px;
+            color: #93c5fd;
+            margin-bottom: 24px;
+            font-weight: 500;
+        }
+
+        .hero h1 {
+            font-size: 42px;
+            font-weight: 800;
+            color: #ffffff;
+            margin-bottom: 16px;
+            letter-spacing: -0.5px;
+        }
+
+        .hero p {
+            font-size: 16px;
+            color: #9ca3af;
+            max-width: 650px;
+            margin: 0 auto 32px auto;
+            line-height: 1.6;
+        }
+
+        .btn-primary {
+            display: inline-block;
+            background-color: #2563eb;
+            color: #ffffff;
+            padding: 12px 28px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 15px;
+            transition: background-color 0.2s, transform 0.2s;
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+        }
+
+        .btn-primary:hover {
+            background-color: #1d4ed8;
+            transform: translateY(-2px);
+        }
+
+        /* Contenedor de Apartados (Cards Grid) */
+        .container {
+            max-width: 1200px;
+            margin: 60px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+            flex-grow: 1;
+        }
+
+        .card {
+            background-color: #111827;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 14px;
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(96, 165, 250, 0.4);
+            box-shadow: 0 10px 25px -5px rgba(0, 0.0, 0.0, 0.5);
+        }
+
+        .card-img-container {
+            width: 100%;
+            height: 150px;
+            background-color: #1f2937;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .card-img-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .card-img-placeholder {
+            color: #6b7280;
+            font-size: 13px;
+        }
+
+        .card h3 {
+            font-size: 18px;
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .card p {
+            font-size: 14px;
+            color: #9ca3af;
+            line-height: 1.5;
+            margin-bottom: 24px;
+            flex-grow: 1;
+        }
+
+        .card-btn {
+            display: block;
+            width: 100%;
+            text-align: center;
+            background-color: rgba(31, 41, 55, 0.8);
+            color: #60a5fa;
+            border: 1px solid rgba(96, 165, 250, 0.2);
+            padding: 10px 16px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            transition: background-color 0.2s, color 0.2s, border-color 0.2s;
+        }
+
+        .card-btn:hover {
+            background-color: #2563eb;
+            color: #ffffff;
+            border-color: #2563eb;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 30px;
+            font-size: 13px;
+            color: #6b7280;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            background-color: #0b0f19;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="header-left">IRTRA Petapa | TICs</div>
+        <div class="header-right">Colegio Capouilliez</div>
+    </header>
+
+    <!-- Sección Hero Principal -->
+    <section class="hero">
+        <div class="badge">🚀 Proyecto de Automatización y TICs</div>
+        <h1>Centro de Mando SafeZone IRTRA</h1>
+        <p>Sistema Electrónico Autónomo aplicado al IRTRA Petapa. Solución integral de ingeniería desarrollada para optimizar procesos operativos mediante tecnología de vanguardia.</p>
+        <a href="#apartados" class="btn-primary">Explorar Componentes</a>
+    </section>
+
+    <!-- Contenedor con los 4 Apartados -->
+    <div class="container" id="apartados">
+        
+        <!-- Apartado 1 -->
+        <div class="card">
+            <div>
+                <div class="card-img-container">
+                    <!-- Reemplaza el src con tu imagen real -->
+                    <span class="card-img-placeholder">Imagen de Simulación</span>
+                </div>
+                <h3>⚙️ 1. Simulación de Tinkercad</h3>
+                <p>Implementación del circuito autónomo, pruebas de lógica y conexiones virtuales diseñadas para el funcionamiento operativo del proyecto.</p>
+            </div>
+            <a href="https://www.tinkercad.com/things/iucwRoORLLF-proyecto-final-4u-ochoagolompaz/editel?returnTo=https%3A%2F%2Fwww.tinkercad.com%2Fdashboard" target="_blank" class="card-btn">Ver Simulación</a>
+        </div>
+
+        <!-- Apartado 2 -->
+        <div class="card">
+            <div>
+                <div class="card-img-container">
+                    <!-- Reemplaza el src con tu imagen real -->
+                    <span class="card-img-placeholder">Imagen de Investigación</span>
+                </div>
+                <h3>📁 2. Investigación Formal</h3>
+                <p>Documento técnico detallado que incluye la fundamentación teórica, estructuración bajo normas y el marco de desarrollo del proyecto.</p>
+            </div>
+            <!-- Nota: Los enlaces locales file:/// no abren directamente desde navegadores modernos por seguridad, se sugiere cambiar por ruta relativa si se sube a internet -->
+            <a href="file:///D:/Downloads/Proyecto%20Final%20Robotica%20IRTRA%20-%20Documento%20Formal%20Limpio%20(1).pdf" target="_blank" class="card-btn">Leer Documento PDF</a>
+        </div>
+
+        <!-- Apartado 3 -->
+        <div class="card">
+            <div>
+                <div class="card-img-container">
+                    <!-- Reemplaza el src con tu imagen real -->
+                    <span class="card-img-placeholder">Imagen de Infografía</span>
+                </div>
+                <h3>📊 3. Infografía del Proyecto</h3>
+                <p>Resumen visual estructurado con los puntos clave, diagramas de flujo y arquitectura general de SafeZone IRTRA.</p>
+            </div>
+            <a href="file:///D:/Downloads/InfografiaProyecto4u.pdf" target="_blank" class="card-btn">Ver Infografía PDF</a>
+        </div>
+
+        <!-- Apartado 4 -->
+        <div class="card">
+            <div>
+                <div class="card-img-container">
+                    <!-- Reemplaza el src con tu imagen real -->
+                    <span class="card-img-placeholder">Imagen de Podcast</span>
+                </div>
+                <h3>🎙️ 4. Podcast Explicativo</h3>
+                <p>Exposición en formato de audio/video donde se detallan los objetivos, retos superados y demostración de los resultados obtenidos.</p>
+            </div>
+            <!-- Cambia el link del href por tu video de YouTube real -->
+            <a href="https://www.youtube.com" target="_blank" class="card-btn">Escuchar / Ver Podcast</a>
+        </div>
+
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 SafeZone IRTRA - Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+</html>
