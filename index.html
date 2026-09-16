@@ -3,188 +3,221 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Centro de Mando SafeZone IRTRA</title>
-    <!-- Google Fonts para un estilo moderno -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>VapePulse | Tu tienda de vapes y esencias</title>
     <style>
+        :root {
+            --primary: #8a2be2;
+            --secondary: #00ffff;
+            --dark: #121212;
+            --light: #ffffff;
+            --gray: #1e1e1e;
+            --light-gray: #2d2d2d;
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Inter', sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
         body {
-            background-color: #0b0f19;
-            color: #f3f4f6;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
+            background-color: var(--dark);
+            color: var(--light);
+            line-height: 1.6;
         }
 
-        /* Header estilo barra superior */
+        /* Header & Nav */
         header {
+            background-color: rgba(18, 18, 18, 0.95);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid var(--light-gray);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 16px 40px;
-            background-color: rgba(11, 15, 25, 0.8);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 20px;
         }
 
-        .header-left {
-            font-size: 14px;
-            font-weight: 600;
-            color: #60a5fa;
-            letter-spacing: 0.5px;
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--secondary);
+            text-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
         }
 
-        .header-right {
-            font-size: 14px;
-            color: #9ca3af;
-        }
-
-        /* Hero Section Reducido */
-        .hero {
-            text-align: center;
-            padding: 35px 20px 40px 20px;
-            background: linear-gradient(180deg, #0b0f19 0%, #111827 100%);
-            border-bottom: 1px solid rgba(59, 130, 246, 0.2);
-        }
-
-        .badge {
-            display: inline-block;
-            padding: 5px 14px;
-            background: rgba(30, 58, 138, 0.4);
-            border: 1px solid rgba(96, 165, 250, 0.3);
-            border-radius: 20px;
-            font-size: 12px;
-            color: #93c5fd;
-            margin-bottom: 14px;
-            font-weight: 500;
-        }
-
-        .hero h1 {
-            font-size: 34px;
-            font-weight: 800;
-            color: #ffffff;
-            margin-bottom: 10px;
-            letter-spacing: -0.5px;
-        }
-
-        .hero p {
-            font-size: 15px;
-            color: #9ca3af;
-            max-width: 600px;
-            margin: 0 auto;
-            line-height: 1.5;
-        }
-
-        /* Contenedor de Apartados (Diseño estricto de 2 columnas) */
-        .container {
-            max-width: 900px;
-            margin: 40px auto;
-            padding: 0 20px;
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 24px;
-            flex-grow: 1;
-        }
-
-        /* Ajuste responsivo para pantallas pequeñas */
-        @media (max-width: 768px) {
-            .container {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        .card {
-            background-color: #111827;
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            border-radius: 14px;
-            padding: 24px;
+        nav ul {
             display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+            list-style: none;
+            gap: 25px;
         }
 
-        .card:hover {
-            transform: translateY(-5px);
-            border-color: rgba(96, 165, 250, 0.4);
-            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5);
+        nav ul li a {
+            color: var(--light);
+            text-decoration: none;
+            transition: color 0.3s;
         }
 
-        .card-img-container {
-            width: 100%;
-            height: 140px;
-            background-color: #1f2937;
-            border-radius: 8px;
-            margin-bottom: 16px;
-            overflow: hidden;
+        nav ul li a:hover {
+            color: var(--secondary);
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 90vh;
+            background: linear-gradient(rgba(18,18,18,0.7), rgba(18,18,18,0.9)), url('assets/images/hero-bg.jpg') no-repeat center center/cover;
             display: flex;
             align-items: center;
             justify-content: center;
+            text-align: center;
+            padding: 0 20px;
+            margin-top: 60px;
         }
 
-        .card-img-container img {
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            color: #ccc;
+        }
+
+        .btn {
+            display: inline-block;
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            color: var(--dark);
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-weight: bold;
+            text-decoration: none;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+        }
+
+        /* Products Section */
+        .products {
+            max-width: 1200px;
+            margin: 80px auto;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+            color: var(--light);
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .product-card {
+            background-color: var(--gray);
+            border-radius: 15px;
+            overflow: hidden;
+            border: 1px solid var(--light-gray);
+            transition: transform 0.3s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .product-img {
+            height: 220px;
+            background-color: var(--light-gray);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #777;
+            font-size: 14px;
+        }
+
+        .product-img img {
             width: 100%;
             height: 100%;
             object-fit: cover;
         }
 
-        .card-img-placeholder {
-            color: #6b7280;
-            font-size: 13px;
+        .product-info {
+            padding: 20px;
         }
 
-        .card h3 {
-            font-size: 17px;
-            font-weight: 600;
-            color: #ffffff;
+        .product-info h3 {
+            font-size: 1.2rem;
             margin-bottom: 10px;
+        }
+
+        .product-info p {
+            color: #aaa;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+
+        .price-cart {
             display: flex;
+            justify-content: space-between;
             align-items: center;
-            gap: 8px;
         }
 
-        .card p {
-            font-size: 13px;
-            color: #9ca3af;
-            line-height: 1.5;
-            margin-bottom: 20px;
-            flex-grow: 1;
+        .price {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: var(--secondary);
         }
 
-        .card-btn {
-            display: block;
-            width: 100%;
-            text-align: center;
-            background-color: rgba(31, 41, 55, 0.8);
-            color: #60a5fa;
-            border: 1px solid rgba(96, 165, 250, 0.2);
-            padding: 10px 16px;
-            border-radius: 6px;
+        .btn-small {
+            background-color: var(--primary);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 5px;
             text-decoration: none;
-            font-size: 14px;
-            font-weight: 500;
-            transition: background-color 0.2s, color 0.2s, border-color 0.2s;
+            font-size: 0.9rem;
+            transition: background 0.3s;
         }
 
-        .card-btn:hover {
-            background-color: #2563eb;
-            color: #ffffff;
-            border-color: #2563eb;
+        .btn-small:hover {
+            background-color: #7220be;
         }
 
         /* Footer */
         footer {
+            background-color: var(--gray);
+            padding: 40px 20px;
             text-align: center;
-            padding: 25px;
-            font-size: 13px;
-            color: #6b7280;
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
-            background-color: #0b0f19;
+            border-top: 1px solid var(--light-gray);
+            color: #777;
+        }
+
+        footer p {
+            margin-bottom: 10px;
+        }
+
+        .disclaimer {
+            font-size: 0.8rem;
+            color: #e74c3c;
+            max-width: 600px;
+            margin: 0 auto;
         }
     </style>
 </head>
@@ -192,73 +225,85 @@
 
     <!-- Header -->
     <header>
-        <div class="header-left">IRTRA Petapa | TICs</div>
-        <div class="header-right">Colegio Capouilliez</div>
+        <div class="nav-container">
+            <div class="logo">VapePulse</div>
+            <nav>
+                <ul>
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#productos">Productos</a></li>
+                    <li><a href="#nosotros">Nosotros</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
-    <!-- Sección Hero Reducida -->
-    <section class="hero">
-        <div class="badge">🚀 Proyecto de Automatización y TICs</div>
-        <h1>Centro de Mando SafeZone IRTRA</h1>
-        <p>Sistema Electrónico Autónomo aplicado al IRTRA Petapa. Solución integral de ingeniería desarrollada para optimizar procesos operativos mediante tecnología de vanguardia.</p>
+    <!-- Hero Section -->
+    <section id="inicio" class="hero">
+        <div class="hero-content">
+            <h1>Siente el Sabor, Vive el Ritmo</h1>
+            <p>Descubre nuestra exclusiva línea de vapes desechables, pods y líquidos con sabores intensos.</p>
+            <a href="#productos" class="btn">Ver Catálogo</a>
+        </div>
     </section>
 
-    <!-- Contenedor con los 4 Apartados (Distribuidos 2 y 2) -->
-    <div class="container">
-        
-        <!-- Apartado 1 -->
-        <div class="card">
-            <div>
-                <div class="card-img-container">
-                    <span class="card-img-placeholder">Imagen de Simulación</span>
+    <!-- Products Section -->
+    <section id="productos" class="products">
+        <h2 class="section-title">Productos Destacados</h2>
+        <div class="product-grid">
+            
+            <!-- Producto 1 -->
+            <div class="product-card">
+                <div class="product-img">
+                    <img src="assets/images/vape-1.jpg" alt="Vape Pulse Pro">
                 </div>
-                <h3>⚙️ 1. Simulación de Tinkercad</h3>
-                <p>Implementación del circuito autónomo, pruebas de lógica y conexiones virtuales diseñadas para el funcionamiento operativo del proyecto.</p>
-            </div>
-            <a href="https://www.tinkercad.com/things/iucwRoORLLF-proyecto-final-4u-ochoagolompaz/editel?returnTo=https%3A%2F%2Fwww.tinkercad.com%2Fdashboard" target="_blank" class="card-btn">Ver Simulación</a>
-        </div>
-
-        <!-- Apartado 2 -->
-        <div class="card">
-            <div>
-                <div class="card-img-container">
-                    <span class="card-img-placeholder">Imagen de Investigación</span>
+                <div class="product-info">
+                    <h3>VapePulse Pro 15K</h3>
+                    <p>Hasta 15,000 caladas, pantalla LED y flujo de aire ajustable.</p>
+                    <div class="price-cart">
+                        <span class="price">$24.99</span>
+                        <a href="#" class="btn-small">Comprar</a>
+                    </div>
                 </div>
-                <h3>📁 2. Investigación Formal</h3>
-                <p>Documento técnico detallado que incluye la fundamentación teórica, estructuración bajo normas y el marco de desarrollo del proyecto.</p>
             </div>
-            <a href="file:///D:/Downloads/Proyecto%20Final%20Robotica%20IRTRA%20-%20Documento%20Formal%20Limpio%20(1).pdf" target="_blank" class="card-btn">Leer Documento PDF</a>
-        </div>
 
-        <!-- Apartado 3 -->
-        <div class="card">
-            <div>
-                <div class="card-img-container">
-                    <span class="card-img-placeholder">Imagen de Infografía</span>
+            <!-- Producto 2 -->
+            <div class="product-card">
+                <div class="product-img">
+                    <img src="assets/images/vape-2.jpg" alt="Pod System Mini">
                 </div>
-                <h3>📊 3. Infografía del Proyecto</h3>
-                <p>Resumen visual estructurado con los puntos clave, diagramas de flujo y arquitectura general de SafeZone IRTRA.</p>
-            </div>
-            <a href="file:///D:/Downloads/InfografiaProyecto4u.pdf" target="_blank" class="card-btn">Ver Infografía PDF</a>
-        </div>
-
-        <!-- Apartado 4 -->
-        <div class="card">
-            <div>
-                <div class="card-img-container">
-                    <span class="card-img-placeholder">Imagen de Podcast</span>
+                <div class="product-info">
+                    <h3>Pulse Pod Mini</h3>
+                    <p>Recargable, compacto, diseño ergonómico y elegante.</p>
+                    <div class="price-cart">
+                        <span class="price">$18.50</span>
+                        <a href="#" class="btn-small">Comprar</a>
+                    </div>
                 </div>
-                <h3>🎙️ 4. Podcast Explicativo</h3>
-                <p>Exposición en formato de audio/video donde se detallan los objetivos, retos superados y demostración de los resultados obtenidos.</p>
             </div>
-            <a href="https://www.youtube.com" target="_blank" class="card-btn">Escuchar / Ver Podcast</a>
-        </div>
 
-    </div>
+            <!-- Producto 3 -->
+            <div class="product-card">
+                <div class="product-img">
+                    <img src="assets/images/liquid-1.jpg" alt="Esencia Ice Mint">
+                </div>
+                <div class="product-info">
+                    <h3>E-Liquid Ice Mint 60ml</h3>
+                    <p>Sabor mentolado ultra refrescante con sales de nicotina.</p>
+                    <div class="price-cart">
+                        <span class="price">$12.00</span>
+                        <a href="#" class="btn-small">Comprar</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2026 SafeZone IRTRA - Todos los derechos reservados.</p>
+        <p>&copy; 2026 VapePulse. Todos los derechos reservados.</p>
+        <p class="disclaimer">Advertencia: Este producto contiene nicotina. La nicotina es una sustancia adictiva. Prohibida su venta a menores de edad.</p>
     </footer>
 
 </body>
